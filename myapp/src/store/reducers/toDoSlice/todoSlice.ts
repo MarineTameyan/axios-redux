@@ -26,7 +26,7 @@ const toDoSlice = createSlice({
         builder.addCase(addTodoList.pending, (state) =>{
             state.loader = true
         })
-        builder.addCase(addTodoList.fulfilled, (state, action:PayloadAction<IToDoItem[]> ) =>{
+        builder.addCase(addTodoList.fulfilled, (state, action:PayloadAction<IToDoItem> ) =>{
             state.loader = false
             console.log(action)
         })
@@ -42,14 +42,12 @@ const toDoSlice = createSlice({
         })
         builder.addCase(deleteTodoList.fulfilled, (state, action:PayloadAction<IToDoItem[]> ) =>{
             state.loader = false
-            state.list = action.payload
         })
         builder.addCase(editTodoList.pending, (state) =>{
             state.loader = true
         })
         builder.addCase(editTodoList.fulfilled, (state, action:PayloadAction<IToDoItem[]> ) =>{
             state.loader = false
-            state.list = action.payload
         })
     },
     
