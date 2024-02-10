@@ -26,7 +26,7 @@ const toDoSlice = createSlice({
         builder.addCase(addTodoList.pending, (state) =>{
             state.loader = true
         })
-        builder.addCase(addTodoList.fulfilled, (state, action:PayloadAction<IToDoItem[]> ) =>{
+        builder.addCase(addTodoList.fulfilled, (state, action:PayloadAction<IToDoItem> ) =>{
             state.loader = false
             console.log(action)
         })
